@@ -83,16 +83,11 @@ export const defaultBuilderConfig: BuilderConfig = {
   },
 
   storage: {
-    provider: 's3',
-    bucket: env.S3_BUCKET_NAME,
-    region: env.S3_REGION,
-    endpoint: env.S3_ENDPOINT,
-    accessKeyId: env.S3_ACCESS_KEY_ID,
-    secretAccessKey: env.S3_SECRET_ACCESS_KEY,
-    prefix: env.S3_PREFIX,
-    customDomain: env.S3_CUSTOM_DOMAIN,
-    excludeRegex: env.S3_EXCLUDE_REGEX,
-    maxFileLimit: 1000,
+    provider: "local",
+    basePath: "./photos",
+    baseUrl: "/photos",
+    excludeRegex: "^\\.",
+    maxFileLimit: 1000
   },
 
   options: {

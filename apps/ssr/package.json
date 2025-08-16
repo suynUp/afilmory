@@ -14,7 +14,7 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "dev": "concurrently \"pnpm run dev:web\" \"pnpm run dev:next\"",
-    "dev:next": "next dev --turbo --port 1924",
+    "dev:next": "next dev --turbo --port 5175",
     "dev:web": "cross-env DEV_NEXT_JS=true pnpm --filter web dev",
     "start": "next start"
   },

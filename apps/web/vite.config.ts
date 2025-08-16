@@ -31,7 +31,7 @@ const devPrint = (): PluginOption => ({
     server.printUrls = () => {
       console.info(
         `  ${green('➜')}  ${dim('Next.js SSR')}: ${cyan(
-          'http://localhost:1924',
+          'http://localhost:5175',
         )}`,
       )
     }
@@ -186,7 +186,16 @@ export default defineConfig({
     devPrint(),
   ],
   server: {
-    port: !DEV_NEXT_JS ? 1924 : 13333, // 1924 年首款 35mm 相机问世
+    port: !DEV_NEXT_JS ? 5175 : 13333, // 1924 年首款 35mm 相机问世5174
+    watch: {
+      ignored: [
+        '**/*.tmp',
+        '**/DumpStack.log*', // 显式忽略该文件
+        '/**/node_modules/**',
+        '/**/.git/**',
+        'D:/**', // 避免扫描 D 盘根目录（关键！）
+      ],
+    },
   },
   define: {
     APP_DEV_CWD: JSON.stringify(process.cwd()),
